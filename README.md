@@ -17,9 +17,10 @@ python main.py
 ```
 
 ## Tecnologias
-Python
-Pandas
-SQLite
-Task Scheduler (Windows)
+Python  
+Pandas  
+SQLite  
+Task Scheduler (Windows)  
+
 
 
