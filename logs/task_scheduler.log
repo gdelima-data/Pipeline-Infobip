@@ -1,0 +1,389 @@
+[23/01/2026 15:33:55,87] Iniciando pipeline 
+[23/01/2026 15:33:56,63] Pipeline finalizado 
+[23/01/2026 15:35:09,01] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260123.csv
+[23/01/2026 15:35:09,78] Pipeline finalizado 
+[26/01/2026 10:00:02,89] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+[26/01/2026 10:00:13,84] Pipeline finalizado 
+[26/01/2026 10:02:45,90] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+[26/01/2026 10:02:46,94] Pipeline finalizado 
+[26/01/2026 12:52:38,39] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+[26/01/2026 12:52:46,88] Pipeline finalizado 
+[26/01/2026 12:53:46,19] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+[26/01/2026 12:53:47,06] Pipeline finalizado 
+[26/01/2026 15:47:03,79] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+[26/01/2026 15:47:08,14] Pipeline finalizado 
+[26/01/2026 15:49:11,46] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+[26/01/2026 15:49:12,48] Pipeline finalizado 
+[26/01/2026 16:03:02,88] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260126.csv
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 21, in pipeline
+    carregar_sqlite(df)
+    ~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\load\carga.py", line 50, in carregar_sqlite
+    validar_df_para_carga(df)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\load\carga.py", line 26, in validar_df_para_carga
+    assert "dialogo_id" in df.columns
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 29, in <module>
+    pipeline()
+    ~~~~~~~~^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 26, in pipeline
+    registrar_carga(str(arquivo), "ERRO", str(e))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\control\controle.py", line 9, in registrar_carga
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+    INSERT INTO controle_carga (arquivo, status, erro)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    VALUES (?, ?, ?)
+    ^^^^^^^^^^^^^^^^
+    """, (arquivo, status, erro))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+[26/01/2026 16:03:09,61] Pipeline finalizado 
+[27/01/2026 10:00:03,14] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260127.csv
+[27/01/2026 10:00:15,09] Pipeline finalizado 
+[27/01/2026 15:43:57,34] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260127.csv
+[27/01/2026 15:44:04,44] Pipeline finalizado 
+[27/01/2026 15:50:55,67] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260127.csv
+[27/01/2026 15:50:57,09] Pipeline finalizado 
+[27/01/2026 15:54:23,19] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260127.csv
+Dados carregados na tabela 'dialogos' (append)
+[27/01/2026 15:54:24,79] Pipeline finalizado 
+[27/01/2026 15:54:41,09] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260127.csv
+Dados carregados na tabela 'dialogos' (append)
+[27/01/2026 15:54:42,72] Pipeline finalizado 
+[28/01/2026 10:00:03,02] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260128.csv
+Dados carregados na tabela 'dialogos' (append)
+[28/01/2026 10:00:13,00] Pipeline finalizado 
+[28/01/2026 15:10:41,01] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260128.csv
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 21, in pipeline
+    carregar_sqlite(df)
+    ~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\load\carga.py", line 59, in carregar_sqlite
+    df.to_sql(
+    ~~~~~~~~~^
+        tabela,
+        ^^^^^^^
+    ...<2 lines>...
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2841, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2537, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 29, in <module>
+    pipeline()
+    ~~~~~~~~^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 26, in pipeline
+    registrar_carga(str(arquivo), "ERRO", str(e))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\control\controle.py", line 9, in registrar_carga
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+    INSERT INTO controle_carga (arquivo, status, erro)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    VALUES (?, ?, ?)
+    ^^^^^^^^^^^^^^^^
+    """, (arquivo, status, erro))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+[28/01/2026 15:10:57,14] Pipeline finalizado 
+[28/01/2026 15:19:57,04] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260128.csv
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 21, in pipeline
+    carregar_sqlite(df)
+    ~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\load\carga.py", line 59, in carregar_sqlite
+    df.to_sql(
+    ~~~~~~~~~^
+        tabela,
+        ^^^^^^^
+    ...<2 lines>...
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2841, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2537, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 29, in <module>
+    pipeline()
+    ~~~~~~~~^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 26, in pipeline
+    registrar_carga(str(arquivo), "ERRO", str(e))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\control\controle.py", line 9, in registrar_carga
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+    INSERT INTO controle_carga (arquivo, status, erro)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    VALUES (?, ?, ?)
+    ^^^^^^^^^^^^^^^^
+    """, (arquivo, status, erro))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+[28/01/2026 15:20:09,22] Pipeline finalizado 
+[28/01/2026 15:29:22,13] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260128.csv
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 21, in pipeline
+    carregar_sqlite(df)
+    ~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\load\carga.py", line 35, in carregar_sqlite
+    df.to_sql(
+    ~~~~~~~~~^
+        tabela,
+        ^^^^^^^
+    ...<2 lines>...
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2841, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2537, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 29, in <module>
+    pipeline()
+    ~~~~~~~~^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 26, in pipeline
+    registrar_carga(str(arquivo), "ERRO", str(e))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\control\controle.py", line 9, in registrar_carga
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+    INSERT INTO controle_carga (arquivo, status, erro)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    VALUES (?, ?, ?)
+    ^^^^^^^^^^^^^^^^
+    """, (arquivo, status, erro))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+[28/01/2026 15:29:34,35] Pipeline finalizado 
+[28/01/2026 15:41:35,53] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260128.csv
+Dados carregados na tabela 'dialogos' (append)
+[28/01/2026 15:41:36,34] Pipeline finalizado 
+[29/01/2026 10:00:03,10] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260129.csv
+Dados carregados na tabela 'dialogos' (append)
+[29/01/2026 10:00:13,65] Pipeline finalizado 
+[30/01/2026 10:00:02,50] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260130.csv
+Dados carregados na tabela 'dialogos' (append)
+[30/01/2026 10:00:14,25] Pipeline finalizado 
+[02/02/2026 10:00:03,04] Iniciando pipeline 
+[02/02/2026 15:39:33,28] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260202.csv
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 21, in pipeline
+    carregar_sqlite(df)
+    ~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\load\carga.py", line 35, in carregar_sqlite
+    df.to_sql(
+    ~~~~~~~~~^
+        tabela,
+        ^^^^^^^
+    ...<2 lines>...
+        index=False
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\core\generic.py", line 3109, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2841, in to_sql
+    return table.insert(chunksize, method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 1121, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\gabriel.lima_incenti\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\sql.py", line 2537, in _execute_insert
+    conn.executemany(self.insert_statement(num_rows=1), data_list)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 29, in <module>
+    pipeline()
+    ~~~~~~~~^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\main.py", line 26, in pipeline
+    registrar_carga(str(arquivo), "ERRO", str(e))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\control\controle.py", line 9, in registrar_carga
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+    INSERT INTO controle_carga (arquivo, status, erro)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    VALUES (?, ?, ?)
+    ^^^^^^^^^^^^^^^^
+    """, (arquivo, status, erro))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+[02/02/2026 15:39:49,25] Pipeline finalizado 
+[02/02/2026 15:40:26,57] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260202.csv
+Dados carregados na tabela 'dialogos' (append)
+[02/02/2026 15:40:27,30] Pipeline finalizado 
+[03/02/2026 10:00:03,21] Iniciando pipeline 
+[04/02/2026 10:00:03,32] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260204.csv
+Dados carregados na tabela 'dialogos' (append)
+[04/02/2026 10:00:13,99] Pipeline finalizado 
+[05/02/2026 10:00:03,25] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260205.csv
+Dados carregados na tabela 'dialogos' (append)
+[05/02/2026 10:00:13,53] Pipeline finalizado 
+[06/02/2026 10:00:02,98] Iniciando pipeline 
+[06/02/2026 10:00:13,50] Pipeline finalizado 
+[06/02/2026 12:28:09,13] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260206.csv
+[06/02/2026 12:28:10,28] Pipeline finalizado 
+[06/02/2026 12:30:51,67] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260206.csv
+Dados processados com sucesso na tabela 'dialogos'
+[06/02/2026 12:30:52,65] Pipeline finalizado 
+[06/02/2026 12:34:49,02] Iniciando pipeline 
+CSV salvo em: C:\Users\gabriel.lima_incenti\Documents\Scraping\ETL\data\processado\dialogos_20260206.csv
+Dados atualizados (sobrescritos) na tabela 'dialogos'
+[06/02/2026 12:34:50,00] Pipeline finalizado 
