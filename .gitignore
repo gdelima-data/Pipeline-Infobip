@@ -1,0 +1,18 @@
+# Dados locais
+data/entrada/*
+data/processado/*
+data/db/*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,5 @@
+pandas
+pandera
+prefect
+sqlalchemy
+sqlite-utils
