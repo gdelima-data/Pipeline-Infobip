@@ -28,7 +28,9 @@ com foco em confiabilidade, rastreabilidade e escalabilidade.
 Python  
 Pandas  
 SQLite  
-Task Scheduler (Windows)  
+SQLAlchemy
+Prefect
+Pandera
 
 
 
