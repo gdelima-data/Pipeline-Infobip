@@ -28,9 +28,9 @@ com foco em confiabilidade, rastreabilidade e escalabilidade.
 Python  
 Pandas  
 SQLite  
-SQLAlchemy
-Prefect
-Pandera
+SQLAlchemy  
+Prefect  
+Pandera  
 
 
 
